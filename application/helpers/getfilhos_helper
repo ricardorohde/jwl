@@ -1,0 +1,21 @@
+<?php
+
+if (!defined('BASEPATH'))
+    exit('No direct script access allowed');
+
+function getFilhos($pai) {
+    
+    
+    /* Objetivo: Montar uma árvore de navegação
+     * Exemplo: Categoria Pai > Filho > Neto > Bisneto ...
+     */
+    $ci = & get_instance();
+    $ci->load->model('restrito/subcatitens_model');
+        
+    //Pega o nome da categoria PAI para imprimi-lo em tela
+    $resultado = $ci->subcatitens_model->retrieve_by_cat($pai);
+    
+    return $resultado;
+        
+   
+}

@@ -1,0 +1,274 @@
+body {
+	margin: 0px;
+	padding: 0px;
+	background-image: url(../imagens/backend/bg.jpg);
+	background-repeat: repeat-x;
+	background-color: #FFF;
+	font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+	font-size: 13px;
+}#geral {
+	width: 950px;
+	margin-top: 0px;
+	margin-right: auto;
+	margin-bottom: 0px;
+	margin-left: auto;
+}
+#data {
+	float: right;
+	width: 500px;
+	color: #FFF;
+	height: 30px;
+	margin-bottom: 10px;
+}
+#data p {
+	margin-top: 5px;
+	margin-right: 0px;
+	margin-bottom: 0px;
+	margin-left: 0px;
+	text-align: right;
+}
+
+#topo {
+	height: 100px;
+	width: 950px;
+	clear: both;
+	margin-top: 10px;
+}
+.logo {
+	height: 80px;
+	width: 243px;
+	float: left;
+}
+.dados {
+	background-image: url(../imagens/backend/box.png);
+	height: 80px;
+	width: 260px;
+	float: right;
+	margin: 0px;
+	padding: 0px;
+	background-repeat: no-repeat;
+	font-size: 12px;
+	color: #666;
+}
+.dados p {
+	padding: 0px;
+	margin-top: 5px;
+	margin-right: 5px;
+	margin-bottom: 10px;
+	margin-left: 10px;
+}
+.big {
+	font-size: 20px;
+	font-weight: bold;
+}
+.menuTopo {
+	padding: 0px;
+	list-style-type: none;
+	margin-top: 0px;
+	margin-right: 5px;
+	margin-bottom: 0px;
+	margin-left: 10px;
+}
+.menuTopo li {
+	display: inline;
+}
+.menuTopo li a {
+	text-decoration: none;
+	font-weight: normal;
+	color: #333;
+	display: block;
+	float: left;
+	margin-right: 5px;
+	margin-left: 5px;
+	margin-top: 0px;
+	margin-bottom: 0px;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	padding-right: 5px;
+	padding-left: 5px;
+	background-color: #f4f4f4;
+	border: 1px solid #CCC;
+}
+.menuTopo li a:hover {
+	text-decoration: none;
+	font-weight: normal;
+	color: #FFF;
+	display: block;
+	float: left;
+	background-color: #0A4B7D;
+	border: 1px solid #0CF;
+}
+
+#topCconteudo {
+	background-image: url(../imagens/backend/topContent.png);
+	background-repeat: no-repeat;
+	height: 19px;
+	width: 950px;
+	clear: both;
+}
+#conteudo {
+	background-color: #FFF;
+	width: 950px;
+	margin-top: 0px;
+	padding-top: 20px;
+	padding-bottom: 20px;
+}
+#menulateral {
+	background-image: url(../imagens/backend/fnd_lado.png);
+	width: 227px;
+	float: left;
+	
+	position: fixed;
+	left: 0px;
+	top: 0px;
+}
+
+/*
+#menulateral {
+	background-image: url(../imagens/backend/fnd_lado.png);
+	width: 227px;
+	float: left;
+	margin-top: -20px;
+}
+
+*/
+
+#principal {
+	float: left;
+	width: 98%;
+	margin-left: 10px;
+	
+}
+
+/*
+#principal {
+	float: left;
+	width: 713px;
+	margin-left: 10px;
+	margin-top: -10px;
+}
+
+*/
+.spacer {
+	clear: both;
+	height: 3px;
+}
+#rdpMenu {
+	background-image: url(../imagens/backend/footer-menu.png);
+	height: 16px;
+	width: 227px;
+	clear: both;
+}
+#rodape {
+	background-color: #666;
+	color: #FFF;
+}
+#rodape p {
+	padding-left: 15px;
+	padding-top: 10px;
+}
+.menuLado {
+	margin: 0px;
+	list-style-type: none;
+	padding-top: 0px;
+	padding-right: 0px;
+	padding-bottom: 0px;
+	padding-left: 0px;
+}
+.menuLado li {
+	display: inline;
+}
+.menuLado li a {
+	display: block;
+	margin-left: 15px;
+	padding: 3px;
+	margin-right: 5px;
+	margin-bottom: 3px;
+	color: #FFF;
+	text-decoration: none;
+}
+.menuLado li a:hover {
+	display: block;
+	color: #FFF;
+	text-decoration: none;
+	background-image: url(../imagens/backend/fmmn.png);
+	background-repeat: repeat;
+}
+.campotexto {
+	width: 300px;
+	background-color: #CCC;
+	border: 1px solid #666;
+	padding: 3px;
+}
+.camposelect {
+	width: 300px;
+	background-color: #CCC;
+	border: 1px solid #666;
+	padding: 3px;
+}
+.botao {
+	background-color: #CCC;
+	border: 1px solid #666;
+	padding: 3px;
+}
+.laimg {
+	width: 150px;
+	height: 150px;
+	margin-right: 5px;
+	margin-bottom: 5px;
+	margin-left: 5px;
+	float: left;
+	position: relative;
+	z-index: 1;
+}
+.mbar a {
+	color: #FFF;
+	background-color: #069;
+	text-decoration: none;
+	border: 1px solid #039;
+	padding: 3px;
+	position: relative;
+	z-index: 3;
+	top: -25px;
+}
+.sucesso {
+	width: 400px;
+	font-size: 16px;
+	color: #FFF;
+	font-weight: bold;
+	background-color: #090;
+	margin: 3px;
+	padding: 4px;
+	border: 1px solid #060;
+}
+.erro {
+	width: 400px;
+	font-size: 16px;
+	color: #FFF;
+	font-weight: bold;
+	background-color: #F00;
+	margin: 3px;
+	padding: 4px;
+	border: 1px solid #900;
+}
+.alerta {
+	width: 400px;
+	font-size: 16px;
+	color: #333;
+	font-weight: bold;
+	background-color: #FC0;
+	margin: 3px;
+	padding: 4px;
+	border: 1px solid #FF0;
+}
+#jumpMenu {
+	height: 30px;
+	border: 1px solid #0B4D7F;
+	color: #FFF;
+	margin-left: 9px;
+	background-color: #0B4D7F;
+	margin-top: -20px;
+	display: block;
+	clear: both;
+	padding: 4px;
+}
