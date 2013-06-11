@@ -10,7 +10,7 @@
                   
                 <p>Valor do imóvel<br />
                   <label for="valores"></label>
-                  R$:<input name="valores" type="text" class="campotexto" id="valores" value="<?=$valores[0]->valores; ?>"/>
+                  R$:<input name="valores" style="width:60px;" type="text" class="campotexto" id="valores" value="<?=$valores[0]->valores; ?>"/>mil
                 <br />
                 Banner pagina valor<br />
                   <label for="perspectiva"></label>

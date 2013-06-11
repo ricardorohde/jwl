@@ -248,9 +248,30 @@
       </div>
       
       
-      <div id="buscamenu">
+      
+      
+<!--==========================================-->      
+      <script type="text/javascript">
+      function Redireciona(obj)
+		{
+		var src = "<?=base_url()?>home/val_imovel?val_imovel="+obj.value;
+		location.href = src;
+		}
+</script>
+
+          <select name="val_imovel" id="val_imovel" onchange="Redireciona(this)">
+            <option value="0">Escolha um valor de imovel</option>
+            <option value="500">Até 300 mil</option>
+            <option value="700">De 300 mil á 500 mil</option>
+            <option value="1000">De 500 mil 700 mil</option>
+            <option value="1500">Mais de 1 milhao</option>
+          </select>
+<!--==========================================-->
+      
+      
+      <div id="buscamenu">      
         <form id="buscatopo" name="buscatopo" action="<?=base_url()?>home/procurar" method="post">
-          <input name="procura" type="text" id="procura" onfocus="this.value = '';" onblur="if(this.value == '') { this.value = 'Buscar'}" value="Buscar" />
+          <input name="procura" type="text" id="procura" style="color:#666;" onfocus="if(this.value == 'Buscar Imovel') { this.value = ''}" onblur="if(this.value == '') { this.value = 'Buscar Imovel'}" value="Buscar Imovel" />
           <input type="submit" name="procurabtn" id="procurabtn" value="OK" />
         </form>
       </div>

@@ -100,21 +100,76 @@ class Home extends CI_Controller {
              */
             
             $busca = $this->db->query('
-                                           SELECT * FROM noticias 
-                                           WHERE titulo LIKE "%'.$termo.'%" 
-                                           OR texto LIKE "%'.$termo.'%"
-                                           GROUP BY idnoticias
-                                           ORDER BY data DESC
+										SELECT *
+										FROM imoveis
+										WHERE nome LIKE "%'.$termo.'%"
+										GROUP BY idimoveis
+										ORDER BY nome ASC 
                                       ');
             $data['busca'] = $busca->result();
             
        $this->load->view('elementos/header', $data);
        $this->load->view('elementos/topo');
        //$this->load->view('elementos/banners-interno', $data);
-       $this->load->view('noticias_busca', $data);
+       $this->load->view('imoveis_busca', $data);
        $this->load->view('elementos/footer');
         
     }
+	
+	
+	function val_imovel(){
+       
+            $valor_imovel = $_GET['val_imovel'];
+			 
+			if($valor_imovel == 0){
+				header("Location:".base_url());
+			}
+/*======================================================================*/			
+			if($valor_imovel == 500){
+				$busca = $this->db->query('SELECT *
+									FROM imoveis
+									WHERE valores <= 500
+									GROUP BY idimoveis
+									ORDER BY nome ASC');
+				$data['busca'] = $busca->result();
+			}
+/*======================================================================*/			
+			if($valor_imovel == 700){
+				$busca = $this->db->query('SELECT *
+									FROM imoveis
+									WHERE valores >= 500 AND valores <= 700
+									GROUP BY idimoveis
+									ORDER BY nome ASC');
+				$data['busca'] = $busca->result();
+			}
+/*======================================================================*/			
+			if($valor_imovel == 1000){
+				$busca = $this->db->query('SELECT *
+									FROM imoveis
+									WHERE valores >= 700 AND valores <= 1000
+									GROUP BY idimoveis
+									ORDER BY nome ASC');
+				$data['busca'] = $busca->result();
+			}
+/*======================================================================*/			
+			if($valor_imovel == 1500){
+				$busca = $this->db->query('SELECT *
+									FROM imoveis
+									WHERE valores >= 10000
+									GROUP BY idimoveis
+									ORDER BY nome ASC');
+				$data['busca'] = $busca->result();
+			}
+
+            
+       $this->load->view('elementos/header', $data);
+       $this->load->view('elementos/topo');
+       //$this->load->view('elementos/banners-interno', $data);
+       $this->load->view('imoveis_busca', $data);
+       $this->load->view('elementos/footer');
+        
+    }
+	
     
      public function grava($dados){
        

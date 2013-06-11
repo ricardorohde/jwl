@@ -76,7 +76,10 @@
     for( $i=37; $i<60; $i++ ){
         if($i == 37 || $i == 41 || $i == 45 || $i == 49 || $i == 53 || $i == 57){
             
-            $arrAux = array('venda'=>utf8_decode( $dados->item($i+2)->nodeValue ), 'variacao'=>utf8_decode( $dados->item($i+3)->nodeValue ) );    
+ /*           $arrAux = array('compra'=>utf8_decode( $dados->item($i+5)->nodeValue ),'venda'=>utf8_decode( $dados->item($i+2)->nodeValue ), 'variacao'=>utf8_decode( $dados->item($i+3)->nodeValue ) );    */
+ 
+             $arrAux = array('compra'=>utf8_decode( $dados->item($i+3)->nodeValue ),
+			 				 'variacao'=>utf8_decode( $dados->item($i+5)->nodeValue ) );
         
             array_push( $saida, (object)$arrAux );    
         }
@@ -86,55 +89,60 @@
 }
       
       $minhaCotacao = eCotafacil();
-$val_com = $minhaCotacao[1]->variacao;
-$val_tur = $minhaCotacao[2]->variacao;
-$val_euro = $minhaCotacao[3]->variacao;
-	// cores dos valores
-	if($val_com > $val_tur and $val_com > $val_euro ){
-		$cor_com = 'green';
-		if($val_tur > $val_euro){
-			$cor_tur = 'orange';
-			$cor_euro = 'red';
-		}else{
-			$cor_tur = 'red';
-			$val_euro = 'orange';	
-		}
-	}else
-	if($val_tur > $val_com and $val_tur > $val_euro){
-		$cor_tur = 'green';
-		if($val_com > $val_euro){
-			$cor_com = 'orange';
-			$cor_euro = 'red';
-		}else{
-			$cor_com = 'red';
-			$cor_euro = 'orange';			
-		}
-	}else
-	if($val_euro > $val_com and $val_euro > $val_tur){
-		$cor_euro = 'green';
-		if($val_com > $val_tur){
-			$cor_com = 'orange';
-			$cor_tur = 'red'; 
-		}else{
-			$cor_com = 'red';
-			$cor_tur = 'orange';
-		}
+$val_com = $minhaCotacao[1]->compra;
+$var_com = $minhaCotacao[1]->variacao;
+
+$val_tur = $minhaCotacao[2]->compra;
+$var_tur = $minhaCotacao[2]->variacao;
+
+$val_euro = $minhaCotacao[3]->compra;
+$var_euro = $minhaCotacao[3]->variacao;
+
+// cores dos valores
+$s1 = substr($var_com , 5 , 1 );
+	if($s1 == "-"){
+		$cor_com = 'red';
+	}else if($s1 == "+"){
+		$cor_com = '#14AD14';
+	}else{
+		$cor_com = 'orange';
+	}
+// cores dos valores
+$s2 = substr($var_euro , 5 , 1 );
+	if($s2 == "-"){
+		$cor_euro = 'red';
+	}else if($s2 == "+"){
+		$cor_euro = '#14AD14';
+	}else{
+		$cor_euro = 'orange';
+	}
+// cores dos valores
+$s3 = substr($var_tur , 5 , 1 );
+	if($s3 == "-"){
+		$cor_tur = 'red';
+	}else if($s3 == "+"){
+		$cor_tur = '#14AD14';
+	}else{
+		$cor_tur = 'orange';
 	}
 ?>	
 
 <div class="estilo_cotacao">
-    <table width="200" border="1" cellpadding="10" id="tabela_cotacao">
+    <table width="400" border="1" cellpadding="10" id="tabela_cotacao">
       <tr>
-        <th><p>Dólar Com:</p></th>
-        <th><p class="valor_cotacao" style="color:<?=$cor_com?>;">$<?=$val_com?></p></th>
+        <td style="border-radius:10px 0 0 0;"><p>D&oacute;lar Com</p></td>
+        <td><p class="border_cotacao">$ <?=$val_com?></p></td>
+        <td style="border-radius:0 10px 0 0;"><p class="valor_cotacao" style="color:<?=$cor_com?>;"><?=$var_com?></p></td>
       </tr>
       <tr>
-        <td><p>Euro:</p></td>
-        <td><p class="valor_cotacao" style="color:<?=$cor_euro?>;">&euro;<?=$val_euro?></p></td>
+        <td><p>Euro</p></td>
+        <td><p class="border_cotacao">&euro; <?=$val_euro?></p></td>
+        <td><p class="valor_cotacao" style="color:<?=$cor_euro?>;"><?=$var_euro?></p></td>
       </tr>
       <tr>
-        <td><p>Dólar Tur:</p></td>
-        <td><p class="valor_cotacao" style="color:<?=$cor_tur?>;">$<?=$val_tur?></p></td>
+        <td style="border-radius:0 0 0 10px;"><p>D&oacute;lar Tur</p></td>
+        <td><p class="border_cotacao">$ <?=$val_tur?></p></td>
+        <td style="border-radius:0 0 10px 0;"><p class="valor_cotacao" style="color:<?=$cor_tur?>;"><?=$var_tur?></p></td>
       </tr>
     </table>
     

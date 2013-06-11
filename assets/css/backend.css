@@ -321,37 +321,39 @@ font-weight:bold;
 
 /*========== icons imoveis ======== RESTRITO ======*/
 #apresent_icon{
-    background: url("../imagens/backend/new_icon.png") repeat scroll -1px 145px transparent;
+    background: url("../imagens/backend/new_icon.png") repeat scroll -1px 158px transparent;
 }
 #mapa_icon{   
-	background: url("../imagens/backend/new_icon.png") repeat scroll -37px 145px transparent;
+	background: url("../imagens/backend/new_icon.png") repeat scroll -32px 158px transparent;
 }
 #dinheiro_icon{   
-	background: url("../imagens/backend/new_icon.png") repeat scroll -73px 145px transparent;
+	background: url("../imagens/backend/new_icon.png") repeat scroll -63px 158px transparent;
 }
 #link_icon{   
-	background: url("../imagens/backend/new_icon.png") repeat scroll 36px 145px transparent;
+	background: url("../imagens/backend/new_icon.png") repeat scroll 31px 158px transparent;
 }
 /*======== BAIXO ===========*/
 #foto_icon{   
-	background: url("../imagens/backend/new_icon.png") repeat scroll 144px 36px transparent;
-	margin-left:25px;
+	background: url("../imagens/backend/new_icon.png") repeat scroll 124px 26px transparent;
+	margin-left:1px;
 	margin-top:10px;
 }
 #video_icon{   
-	background: url("../imagens/backend/new_icon.png") repeat scroll 108px 36px transparent;
+	background: url("../imagens/backend/new_icon.png") repeat scroll 93px 26px transparent;
 	margin-top:10px
 }
 #excluir_icon{   
-	background: url("../imagens/backend/new_icon.png") repeat scroll 72px 36px transparent;
+	background: url("../imagens/backend/new_icon.png") repeat scroll 62px 26px transparent;
 	margin-top:10px;
+	width:61px;
 }
 
 .all_icon_imovel{
 	margin-left:5px;
 	float:left;	
-	width:35px;
-	height:35px;
+	width:30px;
+	height:25px;
+	margin-left:0px;
 }
 
 

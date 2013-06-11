@@ -102,7 +102,7 @@ Complementos<br/>
                       
                       <a href="<?php echo base_url() . 'restrito/imoveis/sites/' . $secao->idimoveis; ?>" title="Site do Empreendimento"><div id="link_icon" class="all_icon_imovel"></div></a>
                <!--============  Quebra de linha ==========-->        
-                      <br />
+                      <br /><br />
                       
                      <a href="<?php echo base_url() . 'restrito/imoveis/perspectivas/' . $secao->idimoveis; ?>" title="Fotos"><div id="foto_icon" class="all_icon_imovel"></div></a>
                      

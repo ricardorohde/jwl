@@ -247,13 +247,24 @@ h4 {
     border-bottom-left-radius:10px;
     border-bottom-right-radius:10px;
 }
+
+#val_imovel{
+	border: 1px solid #999999;
+    border-radius: 5px 5px 5px 5px;
+    float: left;
+    height: 30px;
+    margin-left: -180px;
+    margin-top: 15px;
+    padding-top: 5px;	
+}
+
 #buscamenu {
 	background-image: url(../imagens/frontend/buscatopo.png);
 	height: 29px;
 	width: 257px;
 	float: right;
 	background-repeat: no-repeat;
-	margin-right: -138px;
+	margin-right: -120px;
     margin-top: 16px;
 }
 #buscatopo input[type=text] {
@@ -698,36 +709,45 @@ border-radius:15px;
 	height:405px;
 }
 #cotacoes{
- 	background:url("../imagens/frontend/back_cotacao.jpg") repeat scroll -30px 0 transparent;
-    border-radius: 5px 5px 5px 5px;
+    border-radius: 10px;
     box-shadow: 0 0 3px #000000;
     float: right;
     font-family: Arial, Helvetica, sans-serif;
     height: 180px;
-    margin-right: 607px;
+    margin-right: 530px;
     margin-top: -389px;
-    width: 180px;
+    width: 250px;
+}
+
+.border_cotacao{
+	border-left: 1px dotted #666666;
+    border-right: 1px dotted #666666;
+    padding-bottom: 10px;
 }
 
 #tabela_cotacao{
-	width:164px;
+	width:250px;
 	margin-top:-2px;
+	text-align:center;
 }
 #tabela_cotacao tr{
 	height:60px;
 	text-align:center;
 }
+#tabela_cotacao td{
+	background: linear-gradient(to bottom, #303030 22%, #020202 100%) repeat scroll 0 0 transparent;	
+}
 #tabela_cotacao p{
 	font-size:15px;
 	color: #FFFFFF;
     font-weight: bold;
-    padding-top: 20px;	
-	margin-left:14px;
+    padding-top: 10px;
+	margin-top:10px;	
 }
 
 
 .estilo_cotacao{
-	width:99px;
+	width:250px;
 	float:left;
 	text-align:center;
 	padding-top:2px;
