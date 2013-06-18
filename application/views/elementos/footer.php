@@ -44,16 +44,23 @@
         </div>
         
       
-        <div id="text_endereco"><p><?=$endereco_home;?><br/><br/><center>Tel: <?=$tel_home;?></center></p></div>
+        <div id="text_endereco">
+        	<center>
+        		<p><?=$endereco_home;?>
+                	<br/><br/>
+            	<?=$tel_home;?>
+            	</p>
+        	<center>
+        </div>
          
 		<?php
-			if($skype != ''){
+			/*if($skype != ''){
 			echo '<div id="skypes_foot">
 			<h1 id="title_skype">Skypes disponiveis</h1>
 				<p id="text_skype">
 				'.$skype.'
 				</p>
-			</div>';}
+			</div>';}*/
 		?>
             
             
@@ -73,30 +80,34 @@
     
     $dados = $DOM->getElementsByTagName( 'td' );
     
-    for( $i=37; $i<60; $i++ ){
-        if($i == 37 || $i == 41 || $i == 45 || $i == 49 || $i == 53 || $i == 57){
+    for( $i=61; $i<70; $i++ ){
+//        if($i == 37 || $i == 41 || $i == 45 || $i == 49 || $i == 53 || $i == 57){
             
  /*           $arrAux = array('compra'=>utf8_decode( $dados->item($i+5)->nodeValue ),'venda'=>utf8_decode( $dados->item($i+2)->nodeValue ), 'variacao'=>utf8_decode( $dados->item($i+3)->nodeValue ) );    */
  
-             $arrAux = array('compra'=>utf8_decode( $dados->item($i+3)->nodeValue ),
-			 				 'variacao'=>utf8_decode( $dados->item($i+5)->nodeValue ) );
+             $arrAux = array('dollar1'=>utf8_decode( $dados->item($i+1)->nodeValue ),
+			 				 'dollar2'=>utf8_decode( $dados->item($i+3)->nodeValue ),
+			 				 'euro1'=>utf8_decode( $dados->item($i+7)->nodeValue ),
+			 				 'euro2'=>utf8_decode( $dados->item($i+9)->nodeValue ),
+			 				 'dol_tur1'=>utf8_decode( $dados->item($i+4)->nodeValue ),
+			 				 'dol_tur2'=>utf8_decode( $dados->item($i+6)->nodeValue ));
         
             array_push( $saida, (object)$arrAux );    
         }
-    }
+  //  }
     
     return $saida;
 }
       
       $minhaCotacao = eCotafacil();
-$val_com = $minhaCotacao[1]->compra;
-$var_com = $minhaCotacao[1]->variacao;
+$val_com = $minhaCotacao[1]->dollar1;
+$var_com = $minhaCotacao[1]->dollar2;
 
-$val_tur = $minhaCotacao[2]->compra;
-$var_tur = $minhaCotacao[2]->variacao;
+$val_tur = $minhaCotacao[2]->dol_tur1;
+$var_tur = $minhaCotacao[2]->dol_tur2;
 
-$val_euro = $minhaCotacao[3]->compra;
-$var_euro = $minhaCotacao[3]->variacao;
+$val_euro = $minhaCotacao[3]->euro1;
+$var_euro = $minhaCotacao[3]->euro2;
 
 // cores dos valores
 $s1 = substr($var_com , 5 , 1 );

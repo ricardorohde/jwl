@@ -70,112 +70,73 @@
 	<li class="top"><a href="<?=base_url()?>imoveis" id="products" class="top_link"><span class="down">Imóveis</span></a>
 		<ul class="sub_dropdown">
 <!--===============================  SUB 1  =================-->
-			<li><a href="#" class="fly">Apartamento</a>
+			<li><a href="<?=base_url()?>imoveis/apartamentos" class="fly">Apartamento</a>
 					<ul>
-						<li><a href="#">3 Quartos/1 suite</a></li>
-						<li><a href="#">4 Quartos/1 suite</a></li>
-						<li><a href="#">4 Quartos/2 suites</a></li>
+						<li><a href="<?=base_url()?>imoveis/apartamento_1qt">1 Quarto</a></li>
+						<li><a href="<?=base_url()?>imoveis/apartamento_2qt">2 Quartos</a></li>
+						<li><a href="<?=base_url()?>imoveis/apartamento_3qt">3 Quartos</a></li>
+						<li><a href="<?=base_url()?>imoveis/apartamento_4qt">4 Quartos</a></li>
+         				<li><a href="<?=base_url()?>imoveis/apartamento_5qt">Mais de 4 Quartos</a></li>
 					</ul>
 			</li>
             
 <!--===============================  SUB 2  ================-->
-			<li class="mid"><a href="#" class="fly">Aluguel</a>
+			<li><a href="<?=base_url()?>imoveis/casa" class="fly">Casa</a>
 					<ul>
-						<li><a href="#">Casa</a></li>
-						<li><a href="#" class="fly">Apartamento</a>
-							<ul>
-								<li><a href="#">Frente para praia</a></li>
-								<li><a href="#">Centro</a></li>
-								<li><a href="#">Duplex</a></li>
-							</ul>
-						</li>						
-                        <li><a href="#" class="fly">Kitnet</a>
-							<ul>
-								<li><a href="#">1 Comodos</a></li>
-								<li><a href="#">2 Comodos</a></li>
-								<li><a href="#">3 Comodos</a></li>
-							</ul>
-						</li>
+						<li><a href="<?=base_url()?>imoveis/casa_1qt">1 Quarto</a></li>
+						<li><a href="<?=base_url()?>imoveis/casa_2qt">2 Quartos</a></li>
+						<li><a href="<?=base_url()?>imoveis/casa_3qt">3 Quartos</a></li>
+						<li><a href="<?=base_url()?>imoveis/casa_4qt">4 Quartos</a></li>
+         				<li><a href="<?=base_url()?>imoveis/casa_5qt">Mais de 4 Quartos</a></li>
 					</ul>
 			</li>
-
 <!--===============================  SUB 3  ================-->
-			<li class="mid"><a href="#" class="fly">Financiar</a>
+			<li><a href="<?=base_url()?>imoveis/kitnet" class="fly">Kitnet</a>
 					<ul>
-						<li><a href="#" class="fly">Apartamento</a>
-							<ul>
-								<li><a href="#">Frente para praia</a></li>
-								<li><a href="#">Centro</a></li>
-								<li><a href="#">Duplex</a></li>
-							</ul>
-						</li>						
-                        <li><a href="#" class="fly">Casa</a>
-							<ul>
-								<li><a href="#">2 Quartos</a></li>
-								<li><a href="#">3 Quartos</a></li>
-								<li><a href="#">4 Quartos</a></li>
-                                <li><a href="#">Mais de 4 Quartos</a></li>
-							</ul>
-						</li>
+						<li><a href="<?=base_url()?>imoveis/kitnet_1qt">1 Quarto</a></li>
+						<li><a href="<?=base_url()?>imoveis/kitnet_2qt">2 Quartos</a></li>
+						<li><a href="<?=base_url()?>imoveis/kitnet_3qt">3 Quartos</a></li>
+						<li><a href="<?=base_url()?>imoveis/kitnet_4qt">4 Quartos</a></li>
+         				<li><a href="<?=base_url()?>imoveis/kitnet_5qt">Mais de 4 Quartos</a></li>
 					</ul>
 			</li>
+            
+            
+            
 		</ul>
 	</li>
     
 <!--===============================  MENU 3  ====================================-->
-	<li class="top"><a href="#" id="shop" class="top_link"><span class="down">Aluguel</span></a>
+	<li class="top"><a href="<?=base_url()?>imoveis/aluguel" id="shop" class="top_link"><span class="down">Aluguel</span></a>
 		<ul class="sub_dropdown">
-        	<li class="mid"><a href="#" class="fly">Apartamento</a>
-					<ul>
-						<li><a href="#">Frente para praia</a></li>
-                        <li><a href="#">Centro</a></li>
-                        <li><a href="#">Duplex</a></li>	
-					</ul>
-			</li>
-            <li class="mid"><a href="#" class="fly">Casa</a>
-					<ul>
-						<li><a href="#">2 Quartos</a></li>
-                        <li><a href="#">3 Quartos</a></li>
-                        <li><a href="#">4 Quartos</a></li>
-                        <li><a href="#">Mais de 4 Quartos</a></li>
-					</ul>
-			</li>
+			<li><a href="<?=base_url()?>imoveis/aluguel_apartamento">Apartamento</a></li>
+			<li><a href="<?=base_url()?>imoveis/aluguel_casa">Casa</a></li>
+			<li><a href="<?=base_url()?>imoveis/aluguel_kitnet">Kitnet</a></li>
 		</ul>
 	</li>
     
 <!--===============================  MENU 4  ====================================-->
-	<li class="top"><a href="#" id="contacts" class="top_link"><span class="down">Comprar</span></a>
+	<li class="top"><a href="<?=base_url()?>imoveis/compra" id="contacts" class="top_link"><span class="down">Comprar</span></a>
 		<ul class="sub_dropdown">
-			<li class="mid"><a href="#" class="fly">Apartamento</a>
-					<ul>
-						<li><a href="#">Frente para praia</a></li>
-                        <li><a href="#">Centro</a></li>
-                        <li><a href="#">Duplex</a></li>	
-					</ul>
-			</li>
-            <li class="mid"><a href="#" class="fly">Casa</a>
-					<ul>
-						<li><a href="#">2 Quartos</a></li>
-                        <li><a href="#">3 Quartos</a></li>
-                        <li><a href="#">4 Quartos</a></li>
-                        <li><a href="#">Mais de 4 Quartos</a></li>
-					</ul>
-			</li>
+			<li><a href="<?=base_url()?>imoveis/compra_apartamento">Apartamento</a></li>
+			<li><a href="<?=base_url()?>imoveis/compra_casa">Casa</a></li>
+			<li><a href="<?=base_url()?>imoveis/compra_kitnet">Kitnet</a></li>
 		</ul>
 	</li>
-    
+
 <!--===============================  MENU 5  ====================================-->
-    	<li class="top"><a href="#" id="services" class="top_link"><span class="down">Serviços</span></a>
+	<li class="top"><a href="<?=base_url()?>imoveis/financiamento" id="contacts" class="top_link"><span class="down">Financiamento</span></a>
 		<ul class="sub_dropdown">
-			<li><a href="#">Eletrico</a></li>
-			<li><a href="#">Pintura</a></li>
-			<li><a href="#">Bombeiro hidraulico</a></li>
-			<li><a href="#">Administraçao de condominio</a></li>
+			<li><a href="<?=base_url()?>imoveis/financiamento_apartamento">Apartamento</a></li>
+			<li><a href="<?=base_url()?>imoveis/financiamento_casa">Casa</a></li>
+			<li><a href="<?=base_url()?>imoveis/financiamento_kitnet">Kitnet</a></li>
 		</ul>
 	</li>
     
 <!--===============================  MENU 6  ====================================-->
-	<li class="top"><a href="#" id="privacy" class="top_link"><span>Ajuda</span></a></li>
+    	<li class="top"><a href="#" id="services" class="top_link"><span>Serviços</span></a></li>
+
+
 </ul>
       
       <div id="mensagem_dia">

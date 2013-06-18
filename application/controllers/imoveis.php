@@ -14,7 +14,7 @@ class Imoveis extends CI_Controller {
 
     function index() {
        
-       $data['titulo'] = "Metron Engenharia | Todos os imóveis";
+       $data['titulo'] = "JWL Negócios Imobiliários | Todos os imóveis";
        $data['tit']    = "Todos os imóveis";
        
        /* Puxando todos os imoveis do banco de dados */
@@ -38,15 +38,15 @@ class Imoveis extends CI_Controller {
        $this->load->view('elementos/footer');
      
     }
-    
-    function lancamentos(){
+/*====================================  Apartamentos  ====================================*/		    
+    function apartamentos(){
        
-          $data['titulo'] = "Metron Engenharia | Imóveis - Lançamentos";
-          $data['tit']    = "Lançamentos";
+          $data['titulo'] = "JWL Negócios Imobiliários | Apartamentos";
+          $data['tit']    = "Apartamentos";
        
        /* Puxando todos os imoveis do banco de dados */
        $this->load->model('restrito/imoveis_model');
-       $data['imoveis'] = $this->imoveis_model->listarPorTipo('1');
+       $data['imoveis'] = $this->imoveis_model->listar_imoveis('Apartamento');
 
        
         
@@ -57,15 +57,15 @@ class Imoveis extends CI_Controller {
        $this->load->view('elementos/footer');
         
     }
-    
-     function construcao(){
+/*======= 1 quartos ========*/
+    function apartamento_1qt(){
        
-          $data['titulo'] = "Metron Engenharia | Imóveis - Em Construção";
-          $data['tit']    = "Em Construção";
+          $data['titulo'] = "JWL Negócios Imobiliários | Apartamentos";
+          $data['tit']    = "Apartamentos de 1 Quarto";
        
        /* Puxando todos os imoveis do banco de dados */
        $this->load->model('restrito/imoveis_model');
-       $data['imoveis'] = $this->imoveis_model->listarPorTipo('2');
+       $data['imoveis'] = $this->imoveis_model->listar_ap_quarto('1 quarto');
 
        
         
@@ -76,15 +76,72 @@ class Imoveis extends CI_Controller {
        $this->load->view('elementos/footer');
         
     }
-    
-     function prontos(){
+/*======= 2 quartos ========*/
+    function apartamento_2qt(){
        
-          $data['titulo'] = "Metron Engenharia | Imóveis - Prontos para Morar";
-          $data['tit']    = "Pronto para Morar";
+          $data['titulo'] = "JWL Negócios Imobiliários | Apartamentos";
+          $data['tit']    = "Apartamentos de 2 Quartos";
        
        /* Puxando todos os imoveis do banco de dados */
        $this->load->model('restrito/imoveis_model');
-       $data['imoveis'] = $this->imoveis_model->listarPorTipo('3');
+       $data['imoveis'] = $this->imoveis_model->listar_ap_quarto('2 quartos');
+
+       
+        
+       $this->load->view('elementos/header', $data);
+       $this->load->view('elementos/topo');
+       //$this->load->view('elementos/banners-interno', $data);
+       $this->load->view('imoveis', $data);
+       $this->load->view('elementos/footer');
+        
+    }
+/*======= 3 quartos ========*/
+    function apartamento_3qt(){
+       
+       $data['titulo'] = "JWL Negócios Imobiliários | Apartamentos";
+          $data['tit']    = "Apartamentos de 3 Quartos";
+       
+       /* Puxando todos os imoveis do banco de dados */
+       $this->load->model('restrito/imoveis_model');
+       $data['imoveis'] = $this->imoveis_model->listar_ap_quarto('3 quartos');
+
+       
+        
+       $this->load->view('elementos/header', $data);
+       $this->load->view('elementos/topo');
+       //$this->load->view('elementos/banners-interno', $data);
+       $this->load->view('imoveis', $data);
+       $this->load->view('elementos/footer');
+        
+    }
+/*======= 4 quartos ========*/
+    function apartamento_4qt(){
+       
+          $data['titulo'] = "JWL Negócios Imobiliários | Apartamentos";
+          $data['tit']    = "Apartamentos de 4 Quartos";
+       
+       /* Puxando todos os imoveis do banco de dados */
+       $this->load->model('restrito/imoveis_model');
+       $data['imoveis'] = $this->imoveis_model->listar_ap_quarto('4 quartos');
+
+       
+        
+       $this->load->view('elementos/header', $data);
+       $this->load->view('elementos/topo');
+       //$this->load->view('elementos/banners-interno', $data);
+       $this->load->view('imoveis', $data);
+       $this->load->view('elementos/footer');
+        
+    }
+/*======= mais de 4 quartos ========*/
+    function apartamento_5qt(){
+       
+          $data['titulo'] = "JWL Negócios Imobiliários | Apartamentos";
+          $data['tit']    = "Apartamentos com mais de 4 quartos";
+       
+       /* Puxando todos os imoveis do banco de dados */
+       $this->load->model('restrito/imoveis_model');
+       $data['imoveis'] = $this->imoveis_model->listar_ap_mais_quarto('mais de 4 quartos');
 
        
         
@@ -96,14 +153,15 @@ class Imoveis extends CI_Controller {
         
     }
 
-    function embreve(){
+/*====================================  Casa  ====================================*/			
+	function casa(){
        
-          $data['titulo'] = "Metron Engenharia | Imóveis - Lançamento em Breve";
-          $data['tit']    = "Lançamento em Breve";
+          $data['titulo'] = "JWL Negócios Imobiliários | Casa";
+          $data['tit']    = "Casa";
        
        /* Puxando todos os imoveis do banco de dados */
        $this->load->model('restrito/imoveis_model');
-       $data['imoveis'] = $this->imoveis_model->listarPorTipo('4');
+       $data['imoveis'] = $this->imoveis_model->listar_imoveis('Casa');
 
        
         
@@ -114,24 +172,447 @@ class Imoveis extends CI_Controller {
        $this->load->view('elementos/footer');
         
     }
-    
-    function corporativos(){
+/*======= 1 quarto ========*/
+    function casa_1qt(){
        
-       $data['titulo'] = "Metron Engenharia | Imóveis - Imóveis Corporativos";
+          $data['titulo'] = "JWL Negócios Imobiliários | Apartamentos";
+          $data['tit']    = "Casa de 1 Quartos";
+       
+       /* Puxando todos os imoveis do banco de dados */
+       $this->load->model('restrito/imoveis_model');
+       $data['imoveis'] = $this->imoveis_model->listar_casa_quarto('1 quartos');
+
+       
         
        $this->load->view('elementos/header', $data);
        $this->load->view('elementos/topo');
        //$this->load->view('elementos/banners-interno', $data);
-       $this->load->view('corporativos', $data);
+       $this->load->view('imoveis', $data);
        $this->load->view('elementos/footer');
         
     }
+/*======= 2 quartos ========*/
+    function casa_2qt(){
+       
+          $data['titulo'] = "JWL Negócios Imobiliários | Apartamentos";
+          $data['tit']    = "Casa de 2 Quartos";
+       
+       /* Puxando todos os imoveis do banco de dados */
+       $this->load->model('restrito/imoveis_model');
+       $data['imoveis'] = $this->imoveis_model->listar_casa_quarto('2 quartos');
+
+       
+        
+       $this->load->view('elementos/header', $data);
+       $this->load->view('elementos/topo');
+       //$this->load->view('elementos/banners-interno', $data);
+       $this->load->view('imoveis', $data);
+       $this->load->view('elementos/footer');
+        
+    }
+/*======= 3 quartos ========*/
+    function casa_3qt(){
+       
+       $data['titulo'] = "JWL Negócios Imobiliários | Apartamentos";
+          $data['tit']    = "Apartamentos de 3 Quartos";
+       
+       /* Puxando todos os imoveis do banco de dados */
+       $this->load->model('restrito/imoveis_model');
+       $data['imoveis'] = $this->imoveis_model->listar_casa_quarto('3 quartos');
+
+       
+        
+       $this->load->view('elementos/header', $data);
+       $this->load->view('elementos/topo');
+       //$this->load->view('elementos/banners-interno', $data);
+       $this->load->view('imoveis', $data);
+       $this->load->view('elementos/footer');
+        
+    }
+/*======= 4 quartos ========*/
+    function casa_4qt(){
+       
+          $data['titulo'] = "JWL Negócios Imobiliários | Apartamentos";
+          $data['tit']    = "Apartamentos de 4 Quartos";
+       
+       /* Puxando todos os imoveis do banco de dados */
+       $this->load->model('restrito/imoveis_model');
+       $data['imoveis'] = $this->imoveis_model->listar_casa_quarto('4 quartos');
+
+       
+        
+       $this->load->view('elementos/header', $data);
+       $this->load->view('elementos/topo');
+       //$this->load->view('elementos/banners-interno', $data);
+       $this->load->view('imoveis', $data);
+       $this->load->view('elementos/footer');
+        
+    }
+/*======= mais de 4 quartos ========*/
+    function casa_5qt(){
+       
+          $data['titulo'] = "JWL Negócios Imobiliários | Apartamentos";
+          $data['tit']    = "Apartamentos com mais de 4 quartos";
+       
+       /* Puxando todos os imoveis do banco de dados */
+       $this->load->model('restrito/imoveis_model');
+       $data['imoveis'] = $this->imoveis_model->listar_casa_mais_quarto('mais de 4 quartos');
+
+       
+        
+       $this->load->view('elementos/header', $data);
+       $this->load->view('elementos/topo');
+       //$this->load->view('elementos/banners-interno', $data);
+       $this->load->view('imoveis', $data);
+       $this->load->view('elementos/footer');
+        
+    }	
+/*====================================  Kitnet  ====================================*/		
+	    function kitnet(){
+       
+          $data['titulo'] = "JWL Negócios Imobiliários | Kitnet";
+          $data['tit']    = "Kitnet";
+       
+       /* Puxando todos os imoveis do banco de dados */
+       $this->load->model('restrito/imoveis_model');
+       $data['imoveis'] = $this->imoveis_model->listar_imoveis('Kitnet');
+
+       
+        
+       $this->load->view('elementos/header', $data);
+       $this->load->view('elementos/topo');
+       //$this->load->view('elementos/banners-interno', $data);
+       $this->load->view('imoveis', $data);
+       $this->load->view('elementos/footer');
+        
+    }
+/*======= 1 quarto ========*/
+    function kitnet_1qt(){
+       
+          $data['titulo'] = "JWL Negócios Imobiliários | Kitnet";
+          $data['tit']    = "Kitnet de 1 Quarto";
+       
+       /* Puxando todos os imoveis do banco de dados */
+       $this->load->model('restrito/imoveis_model');
+       $data['imoveis'] = $this->imoveis_model->listar_kitnet_quarto('1 quarto');
+
+       
+        
+       $this->load->view('elementos/header', $data);
+       $this->load->view('elementos/topo');
+       //$this->load->view('elementos/banners-interno', $data);
+       $this->load->view('imoveis', $data);
+       $this->load->view('elementos/footer');
+        
+    }	
+/*======= 2 quartos ========*/
+    function kitnet_2qt(){
+       
+          $data['titulo'] = "JWL Negócios Imobiliários | Kitnet";
+          $data['tit']    = "Kitnet de 2 Quartos";
+       
+       /* Puxando todos os imoveis do banco de dados */
+       $this->load->model('restrito/imoveis_model');
+       $data['imoveis'] = $this->imoveis_model->listar_kitnet_quarto('2 quartos');
+
+       
+        
+       $this->load->view('elementos/header', $data);
+       $this->load->view('elementos/topo');
+       //$this->load->view('elementos/banners-interno', $data);
+       $this->load->view('imoveis', $data);
+       $this->load->view('elementos/footer');
+        
+    }
+/*======= 3 quartos ========*/
+    function kitnet_3qt(){
+       
+       $data['titulo'] = "JWL Negócios Imobiliários | Kitnet";
+          $data['tit']    = "Kitnet de 3 Quartos";
+       
+       /* Puxando todos os imoveis do banco de dados */
+       $this->load->model('restrito/imoveis_model');
+       $data['imoveis'] = $this->imoveis_model->listar_kitnet_quarto('3 quartos');
+
+       
+        
+       $this->load->view('elementos/header', $data);
+       $this->load->view('elementos/topo');
+       //$this->load->view('elementos/banners-interno', $data);
+       $this->load->view('imoveis', $data);
+       $this->load->view('elementos/footer');
+        
+    }
+/*======= 4 quartos ========*/
+    function kitnet_4qt(){
+       
+          $data['titulo'] = "JWL Negócios Imobiliários | Kitnet";
+          $data['tit']    = "Kitnet de 4 Quartos";
+       
+       /* Puxando todos os imoveis do banco de dados */
+       $this->load->model('restrito/imoveis_model');
+       $data['imoveis'] = $this->imoveis_model->listar_kitnet_quarto('4 quartos');
+
+       
+        
+       $this->load->view('elementos/header', $data);
+       $this->load->view('elementos/topo');
+       //$this->load->view('elementos/banners-interno', $data);
+       $this->load->view('imoveis', $data);
+       $this->load->view('elementos/footer');
+        
+    }
+/*======= mais de 4 quartos ========*/
+    function kitnet_5qt(){
+       
+          $data['titulo'] = "JWL Negócios Imobiliários | Kitnet";
+          $data['tit']    = "Kitnet com mais de 4 quartos";
+       
+       /* Puxando todos os imoveis do banco de dados */
+       $this->load->model('restrito/imoveis_model');
+       $data['imoveis'] = $this->imoveis_model->listar_kitnet_mais_quarto('mais de 4 quartos');
+
+       
+        
+       $this->load->view('elementos/header', $data);
+       $this->load->view('elementos/topo');
+       //$this->load->view('elementos/banners-interno', $data);
+       $this->load->view('imoveis', $data);
+       $this->load->view('elementos/footer');
+        
+    }
+
+/*========================================================================================*/	
+/*========================================================================================*/		
+	
+	function compra(){
+       
+          $data['titulo'] = "JWL Negócios Imobiliários | Comprar";
+          $data['tit']    = "Imoveis para Comprar";
+       
+       /* Puxando todos os imoveis do banco de dados */
+       $this->load->model('restrito/imoveis_model');
+       $data['imoveis'] = $this->imoveis_model->listar_tipo('1');
+        
+       $this->load->view('elementos/header', $data);
+       $this->load->view('elementos/topo');
+       //$this->load->view('elementos/banners-interno', $data);
+       $this->load->view('imoveis', $data);
+       $this->load->view('elementos/footer'); 
+    }	
+
+/*#####################################################################*/
+
+	function compra_apartamento(){
+       
+          $data['titulo'] = "JWL Negócios Imobiliários | Comprar";
+          $data['tit']    = "Apartamento para Comprar";
+       
+       /* Puxando todos os imoveis do banco de dados */
+       $this->load->model('restrito/imoveis_model');
+       $data['imoveis'] = $this->imoveis_model->listar_tipo_apartamento('1');
+        
+       $this->load->view('elementos/header', $data);
+       $this->load->view('elementos/topo');
+       //$this->load->view('elementos/banners-interno', $data);
+       $this->load->view('imoveis', $data);
+       $this->load->view('elementos/footer'); 
+    }	
+
+/*#####################################################################*/
+
+	function compra_casa(){
+       
+          $data['titulo'] = "JWL Negócios Imobiliários | Comprar";
+          $data['tit']    = "Casa para Comprar";
+       
+       /* Puxando todos os imoveis do banco de dados */
+       $this->load->model('restrito/imoveis_model');
+       $data['imoveis'] = $this->imoveis_model->listar_tipo_casa('1');
+        
+       $this->load->view('elementos/header', $data);
+       $this->load->view('elementos/topo');
+       //$this->load->view('elementos/banners-interno', $data);
+       $this->load->view('imoveis', $data);
+       $this->load->view('elementos/footer'); 
+    }	
+
+/*#####################################################################*/
+	
+	function compra_kitnet(){
+       
+          $data['titulo'] = "JWL Negócios Imobiliários | Comprar";
+          $data['tit']    = "Kitnet para Comprar";
+       
+       /* Puxando todos os imoveis do banco de dados */
+       $this->load->model('restrito/imoveis_model');
+       $data['imoveis'] = $this->imoveis_model->listar_tipo_kitnet('1');
+        
+       $this->load->view('elementos/header', $data);
+       $this->load->view('elementos/topo');
+       //$this->load->view('elementos/banners-interno', $data);
+       $this->load->view('imoveis', $data);
+       $this->load->view('elementos/footer'); 
+    }
+
+/*========================================================================================*/	
+/*========================================================================================*/		
+/*========================================================================================*/
+
+	function aluguel(){
+       
+          $data['titulo'] = "JWL Negócios Imobiliários | Aluguel";
+          $data['tit']    = "Imoveis para Alguel";
+       
+       /* Puxando todos os imoveis do banco de dados */
+       $this->load->model('restrito/imoveis_model');
+       $data['imoveis'] = $this->imoveis_model->listar_tipo('2');
+        
+       $this->load->view('elementos/header', $data);
+       $this->load->view('elementos/topo');
+       //$this->load->view('elementos/banners-interno', $data);
+       $this->load->view('imoveis', $data);
+       $this->load->view('elementos/footer'); 
+    }
+	
+/*#####################################################################*/
+
+	function aluguel_apartamento(){
+       
+          $data['titulo'] = "JWL Negócios Imobiliários | Aluguel";
+          $data['tit']    = "Apartamento para Aluguel";
+       
+       /* Puxando todos os imoveis do banco de dados */
+       $this->load->model('restrito/imoveis_model');
+       $data['imoveis'] = $this->imoveis_model->listar_tipo_apartamento('2');
+        
+       $this->load->view('elementos/header', $data);
+       $this->load->view('elementos/topo');
+       //$this->load->view('elementos/banners-interno', $data);
+       $this->load->view('imoveis', $data);
+       $this->load->view('elementos/footer'); 
+    }	
+
+/*#####################################################################*/
+
+	function aluguel_casa(){
+       
+          $data['titulo'] = "JWL Negócios Imobiliários | Aluguel";
+          $data['tit']    = "Casa para Aluguel";
+       
+       /* Puxando todos os imoveis do banco de dados */
+       $this->load->model('restrito/imoveis_model');
+       $data['imoveis'] = $this->imoveis_model->listar_tipo_casa('2');
+        
+       $this->load->view('elementos/header', $data);
+       $this->load->view('elementos/topo');
+       //$this->load->view('elementos/banners-interno', $data);
+       $this->load->view('imoveis', $data);
+       $this->load->view('elementos/footer'); 
+    }	
+
+/*#####################################################################*/
+	
+	function aluguel_kitnet(){
+       
+          $data['titulo'] = "JWL Negócios Imobiliários | Aluguel";
+          $data['tit']    = "Kitnet para Aluguel";
+       
+       /* Puxando todos os imoveis do banco de dados */
+       $this->load->model('restrito/imoveis_model');
+       $data['imoveis'] = $this->imoveis_model->listar_tipo_kitnet('2');
+        
+       $this->load->view('elementos/header', $data);
+       $this->load->view('elementos/topo');
+       //$this->load->view('elementos/banners-interno', $data);
+       $this->load->view('imoveis', $data);
+       $this->load->view('elementos/footer'); 
+    }
+
+/*========================================================================================*/	
+/*========================================================================================*/		
+/*========================================================================================*/	
+	
+	function financiamento(){
+       
+          $data['titulo'] = "JWL Negócios Imobiliários | Financiamento";
+          $data['tit']    = "Imoveis para Financiamento";
+       
+       /* Puxando todos os imoveis do banco de dados */
+       $this->load->model('restrito/imoveis_model');
+       $data['imoveis'] = $this->imoveis_model->listar_tipo('3');
+        
+       $this->load->view('elementos/header', $data);
+       $this->load->view('elementos/topo');
+       //$this->load->view('elementos/banners-interno', $data);
+       $this->load->view('imoveis', $data);
+       $this->load->view('elementos/footer'); 
+    }
+	
+/*#####################################################################*/
+
+	function financiamento_apartamento(){
+       
+          $data['titulo'] = "JWL Negócios Imobiliários | Financiamento";
+          $data['tit']    = "Apartamento para Financiamento";
+       
+       /* Puxando todos os imoveis do banco de dados */
+       $this->load->model('restrito/imoveis_model');
+       $data['imoveis'] = $this->imoveis_model->listar_tipo_apartamento('3');
+        
+       $this->load->view('elementos/header', $data);
+       $this->load->view('elementos/topo');
+       //$this->load->view('elementos/banners-interno', $data);
+       $this->load->view('imoveis', $data);
+       $this->load->view('elementos/footer'); 
+    }	
+
+/*#####################################################################*/
+
+	function financiamento_casa(){
+       
+          $data['titulo'] = "JWL Negócios Imobiliários | Financiamento";
+          $data['tit']    = "Casa para Financiamento";
+       
+       /* Puxando todos os imoveis do banco de dados */
+       $this->load->model('restrito/imoveis_model');
+       $data['imoveis'] = $this->imoveis_model->listar_tipo_casa('3');
+        
+       $this->load->view('elementos/header', $data);
+       $this->load->view('elementos/topo');
+       //$this->load->view('elementos/banners-interno', $data);
+       $this->load->view('imoveis', $data);
+       $this->load->view('elementos/footer'); 
+    }	
+
+/*#####################################################################*/
+	
+	function financiamento_kitnet(){
+       
+          $data['titulo'] = "JWL Negócios Imobiliários | Financiamento";
+          $data['tit']    = "Kitnet para Financiamento";
+       
+       /* Puxando todos os imoveis do banco de dados */
+       $this->load->model('restrito/imoveis_model');
+       $data['imoveis'] = $this->imoveis_model->listar_tipo_kitnet('3');
+        
+       $this->load->view('elementos/header', $data);
+       $this->load->view('elementos/topo');
+       //$this->load->view('elementos/banners-interno', $data);
+       $this->load->view('imoveis', $data);
+       $this->load->view('elementos/footer'); 
+    }
+
+/*========================================================================================*/		
+/*========================================================================================*/	
+	
+
     
     function ver($id) {
        /* Contando o clique */
        $this->clicks($id);
        
-       $data['titulo'] = "Metron Engenharia | Imóveis";
+       $data['titulo'] = "JWL Negócios Imobiliários | Imóveis";
        
        $this->load->model('restrito/imoveis_model');
        $data['imoveis'] = $this->imoveis_model->registro($id);
@@ -144,7 +625,7 @@ class Imoveis extends CI_Controller {
     }
     
     function plantas($id) {
-       $data['titulo'] = "Metron Engenharia | Imóveis | Apresentação";
+       $data['titulo'] = "JWL Negócios Imobiliários | Imóveis | Apresentação";
        
        $this->load->model('restrito/imoveis_model');
        $data['imoveis'] = $this->imoveis_model->registro($id);
@@ -158,7 +639,7 @@ class Imoveis extends CI_Controller {
     }
     
     function perspectivas($id) {
-       $data['titulo'] = "Metron Engenharia | Imóveis | Perspectivas";
+       $data['titulo'] = "JWL Negócios Imobiliários | Imóveis | Perspectivas";
        
        $this->load->model('restrito/imoveis_model');
        $data['imoveis'] = $this->imoveis_model->registro($id);
@@ -172,7 +653,7 @@ class Imoveis extends CI_Controller {
     }
     
     function lazer($id) {
-       $data['titulo'] = "Metron Engenharia | Imóveis | Lazer e Serviços";
+       $data['titulo'] = "JWL Negócios Imobiliários | Imóveis | Lazer e Serviços";
        
        $this->load->model('restrito/imoveis_model');
        $data['imoveis'] = $this->imoveis_model->registro($id);
@@ -186,7 +667,7 @@ class Imoveis extends CI_Controller {
     }
     
     function localizacao($id) {
-       $data['titulo'] = "Metron Engenharia | Imóveis | Localização";
+       $data['titulo'] = "JWL Negócios Imobiliários | Imóveis | Localização";
        
        $this->load->model('restrito/imoveis_model');
        $data['imoveis'] = $this->imoveis_model->registro($id);
@@ -199,7 +680,7 @@ class Imoveis extends CI_Controller {
     }
     
      function valores($id) {
-       $data['titulo'] = "Metron Engenharia | Imóveis | Valores";
+       $data['titulo'] = "JWL Negócios Imobiliários | Imóveis | Valores";
        
        $this->load->model('restrito/imoveis_model');
        $data['imoveis'] = $this->imoveis_model->registro($id);
@@ -212,7 +693,7 @@ class Imoveis extends CI_Controller {
     }
     
      function realizacao($id) {
-       $data['titulo'] = "Metron Engenharia | Imóveis | Realização";
+       $data['titulo'] = "JWL Negócios Imobiliários | Imóveis | Realização";
        
        $this->load->model('restrito/imoveis_model');
        $data['imoveis'] = $this->imoveis_model->registro($id);
@@ -225,7 +706,7 @@ class Imoveis extends CI_Controller {
     }
     
     function videos($id) {
-       $data['titulo'] = "Metron Engenharia | Imóveis | Vídeos";
+       $data['titulo'] = "JWL Negócios Imobiliários | Imóveis | Vídeos";
        
        $this->load->model('restrito/imoveis_model');
 
@@ -240,7 +721,7 @@ class Imoveis extends CI_Controller {
     }
     
     function acesse($id) {
-       $data['titulo'] = "Metron Engenharia | Imóveis | Acesse";
+       $data['titulo'] = "JWL Negócios Imobiliários | Imóveis | Acesse";
        
        $this->load->model('restrito/imoveis_model');
        $imoveis = $this->imoveis_model->registro($id);
@@ -257,7 +738,7 @@ class Imoveis extends CI_Controller {
     }
     
     function acompanhamento($id){
-       $data['titulo'] = "Metron Engenharia | Imóveis | Acesse";
+       $data['titulo'] = "JWL Negócios Imobiliários | Imóveis | Acesse";
        
        $this->load->model('restrito/imoveis_model');
        $data['imoveis'] = $this->imoveis_model->registro($id);
@@ -388,7 +869,7 @@ class Imoveis extends CI_Controller {
 	
 
 	
-	    $data['titulo'] = "Metron Engenharia | Imóveis - Busca";
+	    $data['titulo'] = "JWL Negócios Imobiliários | Imóveis - Busca";
         $data['tit']    = "Busca de Imóveis";
        
 	
@@ -465,7 +946,7 @@ echo "<br /><br />";
 
 die('end');
 	
-	    $data['titulo'] = "Metron Engenharia | Imóveis - Busca";
+	    $data['titulo'] = "JWL Negócios Imobiliários | Imóveis - Busca";
         $data['tit']    = "Busca de Imóveis";
        
 	

@@ -28,19 +28,40 @@
                 <h3>Descrição Completa</h3>
 
 Quantidade de quartos<br />
-                <input name="qtd_quarto" id="qtd_quarto" type="text" class="campotexto" size="50" />
+                <select class="campotexto" name="qtd_quarto" id="qtd_quarto">
+                    <option value="">Escolha a quantidade de quartos</option>
+                    <option value="1 quarto">1 quarto</option>
+                    <option value="2 quartos">2 quartos</option>
+                    <option value="3 quartos">3 quartos</option>
+                    <option value="4 quartos">4 quartos</option>
+                    <option value="mais de 4 quartos">mais de 4 quartos</option>
+                  </select>
                 <br /><br />
                 
 Quantidade de suites<br />
-                <input name="qtd_suite" id="qtd_suite" type="text" class="campotexto" size="50" />
+                <select class="campotexto" name="qtd_suite" id="qtd_suite">
+					<option value="">Escolha a quantidade de suites</option>
+                    <option value="1 suite">1 suite</option>
+                    <option value="2 suites">2 suites</option>
+                    <option value="3 suites">3 suites</option>
+                    <option value="4 suites">4 suites</option>
+                    <option value="mais de 4 suites">mais de 4 suites</option>
+                  </select>
                 <br /><br />
                 
 Quantidade de Guaragem<br />
-                <input name="qtd_garagem" id="qtd_garagem" type="text" class="campotexto" size="50" />
+                <select class="campotexto" name="qtd_garagem" id="qtd_garagem">
+                    <option value="">Escolha a quantidade de garagens</option>
+                    <option value="1 garagem">1 garagem</option>
+                    <option value="2 garagens">2 garagens</option>
+                    <option value="3 garagens">3 garagens</option>
+                    <option value="4 garagens">4 garagens</option>
+                    <option value="mais de 4 garagens">mais de 4 garagens</option>
+                  </select>
                 <br /><br />
 
 Tamanho m&sup2;<br />
-                <input name="tamanho_area" id="tamanho_area" type="text" class="campotexto" size="10" />m&sup2;
+                <input name="tamanho_area" id="tamanho_area" type="text" class="campotexto" style="width:50px;" size="10" value="<?=$imoveis[0]->tamanho_area;?>" />m&sup2;
                 <br /><br />
                 
 Quantidade de Torres<br />

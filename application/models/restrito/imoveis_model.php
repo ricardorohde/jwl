@@ -73,12 +73,73 @@ class Imoveis_model extends CI_Model {
         $query = $this->db->get('imoveis');
         return $query->result();
     }
-    
-     function listarPorTipo($tipo) {
+/*====================================================
+======================================================
+======================================================*/
+     function listar_imoveis($tipo) {
+        $this->db->where('tipo_imovel', $tipo);
+        $query = $this->db->get('imoveis');
+        return $query->result();
+    }
+/*======================= APARTAMENTO ===============================*/		
+	function listar_ap_quarto($tipo) {
+		$query = $this->db->query('SELECT * FROM imoveis where tipo_imovel = "Apartamento" and qtd_quarto = "'.$tipo.'"');
+        return $query->result();
+    }
+	function listar_ap_mais_quarto($tipo) {
+        $query = $this->db->query('SELECT * FROM imoveis where tipo_imovel = "Apartamento" and qtd_quarto = "'.$tipo.'"');
+        return $query->result();
+    }
+	
+/*======================= CASA ===============================*/	
+	function listar_casa_quarto($tipo) {
+        $query = $this->db->query('SELECT * FROM imoveis where tipo_imovel = "Casa" and qtd_quarto = "'.$tipo.'"');
+        return $query->result();
+    }
+	function listar_casa_mais_quarto($tipo) {
+        $this->db->where('tipo_imovel','Casa','qtd_quarto !=',$tipo);
+        $query = $this->db->get('imoveis');
+        return $query->result();
+    }
+	
+/*======================= KITNET ===============================*/		
+	function listar_kitnet_quarto($tipo) {
+        $query = $this->db->query('SELECT * FROM imoveis where tipo_imovel = "Kitnet" and qtd_quarto = "'.$tipo.'"');
+        return $query->result();
+    }
+	function listar_kitnet_mais_quarto($tipo) {
+        $this->db->where('tipo_imovel','Kitnet','qtd_quarto !=',$tipo);
+        $query = $this->db->get('imoveis');
+        return $query->result();
+    }
+	
+/*==============================================================*/		
+/*======================= Outros MENUS ===============================*/	
+/*==============================================================*/		
+	function listar_tipo($tipo) {
         $this->db->where('tipo', $tipo);
         $query = $this->db->get('imoveis');
         return $query->result();
     }
+	
+	function listar_tipo_apartamento($tipo) {
+        $query = $this->db->query('SELECT * FROM imoveis where tipo_imovel = "Apartamento" and tipo = "'.$tipo.'"');
+        return $query->result();
+    }
+	
+	function listar_tipo_casa($tipo) {
+        $query = $this->db->query('SELECT * FROM imoveis where tipo_imovel = "Casa" and tipo = "'.$tipo.'"');
+        return $query->result();
+    }
+	
+	function listar_tipo_kitnet($tipo) {
+        $query = $this->db->query('SELECT * FROM imoveis where tipo_imovel = "Kitnet" and tipo = "'.$tipo.'"');
+        return $query->result();
+    }	
+	
+/*====================================================
+======================================================
+======================================================*/
     
     function nomeImovel($id) {
         $this->db->where('idimoveis', $id);
